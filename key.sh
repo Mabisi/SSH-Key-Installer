@@ -20,7 +20,7 @@ USAGE() {
 SSH Key Installer $VERSION
 
 Usage:
-  bash <(curl -fsSL git.io/key.sh) [options...] <arg>
+  bash <(curl -fsSL https://gh.duckcc.com/https://raw.githubusercontent.com/Mabisi/SSH-Key-Installer/master/key.sh) [options...] <arg>
 
 Options:
   -o	Overwrite mode, this option is valid at the top
@@ -43,7 +43,7 @@ get_github_key() {
     fi
     echo -e "${INFO} The GitHub account is: ${KEY_ID}"
     echo -e "${INFO} Get key from GitHub..."
-    PUB_KEY=$(curl -fsSL https://github.com/${KEY_ID}.keys)
+    PUB_KEY=$(curl -fsSL https://gh.duckcc.com/https://github.com/${KEY_ID}.keys)
     if [ "${PUB_KEY}" == 'Not Found' ]; then
         echo -e "${ERROR} GitHub account not found."
         exit 1
